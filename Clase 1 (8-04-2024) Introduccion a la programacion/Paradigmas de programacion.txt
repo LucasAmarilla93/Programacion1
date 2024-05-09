@@ -1,0 +1,29 @@
+                                            Paradigmas de programacion. 
+
+Es un conjunto de ideas que sirven para resolver una cuestion en particular, darle un marco a una situacion = Forma de resolver algo.
+
+Cada paradigma hace un enfoque especificio de cada lenguaje y cada lenguaje sirve para resolver situaciones diversas. 
+(Programar una pagina web vs programar una calculadora)
+
+Nos centramos en 3:
+    Paragidma estructurado : secuencias de acciones una detras de otra.
+    Paradigma orientado a objetos : pensar la programacion de un tema en particular desde el punto de vista de los objetos y su relacion entre ellos
+    Paradigma funcional : organizacion de codigo en funcion. 
+
+Programacion reactiva: Asincronico, estimulo-respuesta.
+
+Programacion estructurada: 
+    Estructuras secuenciales: algoritmos de entrada-procesos-salida (Una cosa dentro de la otra)
+    Estructuras de seleccion: if, match, elif.
+    Estructuras  interaccion: repetir cosas x durante una cantidad de interacciones seleccionadas.
+
+Paradigma funcional:
+    Agarrar el codigo y dividirlo en partes chiquitas y llevar a funcion. 
+
+Paradigma orientado a objetos: 
+    Definimos clases a los cuales le damos atributos y metodos.         
+
+Ver video del moodle.
+
+
+                                            

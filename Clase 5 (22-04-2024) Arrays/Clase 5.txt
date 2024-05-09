@@ -1,0 +1,106 @@
+Arreglos, arrays o vectores.
+
+TDA: tipos de datos abstractos. 
+    ->Vector: no es un tipo de dato nativo, no voy a crear un vector de datos nativo como en C. Voy a trabajar con listas. 
+
+Un array = arreglo = vector -> concepto de variable mas compleja a la que trabajaba donde puedo guardar datos de forma lineal. Uno dispuesto detras del otro en una sola dimension. ->Luego se puede trabajar de manera bidemensional o multidimensional.
+
+Cada elemento es accedido a traves de un indice. Voy a crear una unica variable y trabajar con un subindice:
+Ejemplo: pensar en un edificio con su misma direccion para todos los departamentos. Lo que identifica a cada departamento es su unidad funcional lo cual representa el indice de un vector.
+        Todos tienen la misma direccion de memoria y voy identificando a cada uno a traves de un subindice o indice. 
+
+En python represento un vector con una lista y le doy un enfoque algoritmico. Entender un concepto universal para aplicarlos en distintos lenguajes. En C y C# una lista != vector.
+
+Lista: estructura que permite almacenar colecciones de objetos de manera ordenada y accesible. 
+    Caracteristicas: 
+    Mutables: si yo cambio un elemento, quito, agrego o modifico alguno de sus elementos, el id de la lista no va a cambiar. 
+    Indexables: sus elementos se acceden a traves de indices o posiciones. 
+    Ordenada: mantienen un orden especifico. 
+
+Declarar listas:
+    mi_lista = [] "Le digo a python creame una lista vacia" -> no tiene elementos en este caso, variable que apunta a un segmento de memoria que se llama HEAP (monton) que esta vacio, no tiene nada.
+
+    mi_lista = () -> modo funcion. Es un constructor. 
+
+    Cada vez que creo una lista : Se reserva espacio en memoria para la lista, guarda espacio para el primer elemento que no existe, en el HEAP. Se le asigna un id a la direccion de memoria, se crea la variable en la pila y se le asigna a esa variable el id generado del proceso.
+
+
+Cada vez que ejecuto un programa se reserva espacio en memoria RAM y se divide en segmentos: 
+    Program Code: Donde van todas las instrucciones.
+    Heap: Segmento dinamico donde se pueden cargar listas.
+    Free:
+    En la pila se cargan las llamadas a funcion en el STACK. Es estatico. 
+
+DOS SEGMENTOS QUE NOS IMPORTAN SON:
+    STACK y HEAP.
+
+ASIGNACION:
+    Stack: Estatica, es decir una region de tamaño fijo y predefinido. Se asigna en tiempo de ejecucion y representa un rango muy bajo en memoria. Es memoria RAM tambien segmentada.
+    
+    Heap: Es memoria RAM tambien segmentada. 
+
+Almacenamiento:
+    Stack: variables locales, retornos de funcion
+    Heap: objetos, listas, objetos complejos.
+
+
+Gestion:
+    S: de manera automatica en tiempo de ejecucion.
+    H: depende el lenguaje lo hace de forma manual, por Ejemplo en C. (MALOCK Y REALOCK) (FREE para liberar memoria)
+        automatica: python lo hace a traves de la funciones que se encargan de hacerlo. 
+
+Acceso:
+    Stack: LIFO  (ultimo entrado, primero salido)
+    Heap: El acceso no es secuencial. 
+    
+Un numero entero tiene un tamaño fijo, una lista no porque se pueden agregar o borrar elementos. Por ende la lista tiene que estar en el heap. En python todas las variables que creo son objetos, y aparecen dentro del heap, todo lo que crea lo hace de manera dinamica y lo crea en el monton y se hace referencia desde el stack. El objeto se crea en el monton y en la pila voy a tener una variable con una referencia. 
+
+
+Le doy valor a la lista agregandolos adentro y separandolos por ",".
+
+mi_lista = [4, 9, 3, 7, 1]
+
+mi_lista = [0] * 5 ---> creo una lista de 5 elementos, es decir de tamaño fijo. Sus elementos estan inicializados en 0. Cada elemento lo inicializo con el valor que esta dentro de los corchetes. 
+
+# int vector [5] = {0}
+
+vector = [0] * 5
+
+----------------------------------------------------------------------------------------------------
+
+vector = [5, 9, 6, 8, 7, 1]
+
+print(vector) --> me permite verificar que tiene una lista dentro pero no me permite interactuar con los elementos de la lista en si. Por ende NO SE UTILIZA.
+
+
+A la lista HAY QUE RECORRERLA. 
+
+rango = range (5) -→ muestra el rango de 0 a 5, con el 5 excluido.
+rango = list(range(5)) //-> [0,1,2,3,4]
+
+vector = [5, 9, 6, 8, 7, 1]
+
+for i in range(len(vector)) :  --->len porque necesito saber la cantidad de elementos que se iteran. 
+    print(i) -->muestra el rango 
+    print(vector[i]) -->muetras los valores. 
+
+
+for i in range(len(vector)) : 
+    print(i) -->muestra el rango 
+    print(vector[i], end = "/") --> me devuelve el print separado por el elemento que pongo dentro de las comillas.
+
+
+for i in range (len(vector)):
+    if vector[i] % 2 == 0:
+        print(vector[i], end = " ")
+-------------------------------------------------------------------------------------------------------------
+
+
+Como se carga una lista. 
+2 mecanicas:
+    Carga secuencial: empezar a cargar desde el primer elemento, hasta el ultimo pasando secuencialmente por los que estan en el medio. El algoritmo nos obliga a cargar todos los elementos. 
+
+    Carga aleatoria: cargo elementos dentro de un vector pero donde me diga el usuario. 
+
+
+

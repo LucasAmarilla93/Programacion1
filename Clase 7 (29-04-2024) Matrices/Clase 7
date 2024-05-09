@@ -1,0 +1,20 @@
+Arreglos bidimensionales.
+                                                    MATRICES
+
+En python podemos utilizar listas anidadas para representarlas o usar la biblioteca numPy. (vamos a ir viendo el algoritmo porque numPy resuelve todo).
+
+Una matriz se inicializa como una lista anidada con otra lista.
+
+matriz =   [[5,4,9],
+            [9,8,7],
+            [3,1,5]]
+
+Es una matriz cuadrada de 9 elementos.
+Recaudacion de cada coche y linea tendria que mostrar toda la matriz.
+
+ Recaudar por linea, calcular, recorrer y mostrar por vector (fila) o recorrer, calcular y guardar en otro vector. 
+
+ Recaudar por coche, calculcar, recorrer y mostrar por vector columna.
+
+Poder trabajarlo con reintentos. 
+

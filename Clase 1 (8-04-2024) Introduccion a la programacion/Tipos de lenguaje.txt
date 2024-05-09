@@ -1,0 +1,22 @@
+                                        Lenguajes de programacion   
+
+Hay lenguajes de alto nivel y de bajo nivel dependiendo del mismo lenguaje.
+    Alto nivel: mas cerca del software y del usuario.
+    Bajo nivel: mas cerca del hardware. 
+
+Bajo nivel ---> podriamos reservar y velar memoria a nuestro antojo por ejemplo. 
+
+C es de bajo nivel. Python es de alto nivel. 
+
+Procesos que tienen que ver la construccion de un programa. 
+    Clasificacion de los lenguajes segun la construccion:
+        
+        Compilados : convierte todo a codigo binario, es un proceso de conversion a binario para que la computadora logre interpretarlo ya que la pc no entiende de match,if, etc. -->El proceso de compilacion es la conversion a codigo binario y el que termina leyendo el sistema operativo para hacer todo a traves del procesador. 
+        -->El error me lo muestra mientras yo escribo codigo.
+
+        Interpretados : Escribo el programa, lo ejecuto y hay un "interprete" que recorre linea por linea del programa y la ejecuta -->va paso a paso hasta que se encuentra con un error por ejemplo. (ruby, js, python)
+        -->El error lo encuentra una vez que llega a esa parte de ejecucion.
+
+        Intermedios: Proceso parecido de interpretacion y compilacion en su conjunto. 
+
+Hay apunte en la seccion materiales de estudio. 

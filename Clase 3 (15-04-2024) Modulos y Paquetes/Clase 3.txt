@@ -1,0 +1,199 @@
+Cuando importo entre modulos del mismo paquete va el . dentras de todo. 
+Entre modulos del mismo import, llamo a los modulos con el puntito detras.
+Entra paquetes normal.
+Si quiero traer de otras carpetas es mas complicado.
+Paquetes con mas de un modulo se carga previamente con el "."antes del nombre del paquete.
+
+
+Input.py (Necesita al validate) from .Validate.py import *
+
+Validate.py
+
+
+---------------------------------------------------------------------------------
+def presentar_alumno(nombre, edad, altura):
+    print(f"Hola, me llamo {nombre}, tengo {edad} años y mido {altura}")
+
+presentar_alumno("Juan", 22, 1.75)
+
+
+Cuando defino una funcion, puedo agregarle un adorno a las mismas para cuando yo llame a presentar_alumno no me diga "any" sino que reciba unicamente el tipo de dato que necesito. 
+
+1- Es interpretado en python, no se va a dar cuenta nunca del error.
+2- Va a mostrar cualquier cosa porque no verifica ningun tipo de dato y pone cualquier cosa en cualquier lado. 
+
+Utilizar adorno para indicar justamente que es lo que va en cada lugar. 
+    def presentar_alumno(nombre: str, edad:int, altura:float) :
+
+Lo mismo puede pasar con el retorno, indico que es lo que me va a retorno
+
+    def presentar_alumno(nombre: str, edad:int, altura:float) : -> int (Indico que retorna un entero)
+
+El ideal de la catedra es que nos acostumbremos al tipado aunque en python no usemos tipado porque en programacion dos en C# es un lenguaje fuertemente tipado. 
+
+*---------------------------------------------------------------------------------------------------------*
+Variable globales y Variable locales. 
+
+Python tiene caracteristicas que puede devolver varias cosas
+
+def modificar_valor(numero:int) -> None | int:
+
+def modificar_valor() -> None :
+    numero = 45 /-> variable creada a nivel local, se ve unicamente en el scope que tiene.
+    print(numero)
+
+numero = 20 /-->variable definida a nivel global, se puede ver desde cualquier lado.
+modificar_valor()
+print(numero)
+
+/45 ->dentro de la funcion
+/20 ->fuera de la funcion
+
+Las dos variables numero son distintas. 
+
+////////////////////////////////////////////////////////////////
+def modificar_valor() -> None :
+    print(numero)
+
+numero = 20
+print(numero)
+
+Me imprime los dos!
+
+Las variable int son inmutables! Repasar este concepto.
+
+def modificar_valor() -> None :
+    global numero //--->para modificar la variable, toma la variable del alcance global y modifca su puntero. (Trabaja con la misma variable que yo defini por afuera)
+    numero = 45
+    print(numero)
+
+numero = 20
+
+
+No puedo apuntar desde una funcion a algo que no existe. 
+*Debemos tratar de evitar el ACOMPLAMIENTO PATOLOGICO. 
+
+Todo lo que defina la funcion por dentro, todo lo que necesita para trabajar exceptuando los parametros que entran por afuera, eso se denomina COHESION.
+    -->El ideal es buscar funciones mas cohesivas y menos acoplables. 
+
+Es un concepto que si bien existe, hay que tratar de evitar modificar las variables globales desde dentro de las funciones porque eso genera un ACOMPLAMIENTO PATOLOGICO.
+
+Hay que minimizar el uso de variables globales a 0.
+
+*-----------------------------------------------*
+Modificar una variable desde la funcion sin tener que tenerla adentro.
+
+                         Se esta pasando por referencia!
+                        //
+def modificar_valor(numero: int) :
+    numero = 25 --->valor que paso a ser local en esta funcion / por ende es una nueva variable
+
+numero = 5 --> queda igual
+modificar_valor(numero)
+
+print(numero)
+
+En python TODO se pasa por referencia.
+Cuando paso una variable por parametro a una funcion, se pasa su direccion en memoria como referencia de un objeto al que apunta la variable. Las dos variables apuntan al mismo objeto, es decir que tienen la misma direccion en memoria; PERO cuando una variable dentro de la funcion le modifico el valor, empieza a apuntar a otro segmento en memoria en el HEAP/MONTON y ya no son las mismas. 
+    Cuando le pongo un valor nuevo, creo un objeto nuevo porque es inmutables.
+
+
+Paso por valor, paso una copia en cualquier lenguaje salvo en python.
+El tema de la taza que si la paso por valor y la lleno, se crea una nueva taza y no es que se llena la taza original. 
+Pass by value --> No se modifica la original, Variable inmutables.
+
+Si paso por referencia, la taza original tambien se llena
+Pass by reference --> Variable mutable. 
+    
+def modificar_valor(el_numero: int) -> int: //-->si quiero que se modifique el valor de afuera, tengo que retornarla. 
+    el_numero = 25 
+    return el_numero
+
+
+numero = 5 //-->Esta variable se "destruye".
+numero = modificar_valor(numero) -->asigno la funcion a la misma variable porque ahora la quiero modificar. Piso su valor.  //-->Se crea una nueva direccion en memoria que da el valor que tiene la funcion. 
+print(numero) 
+
+Ahi si se modifica todo. 
+
+*------------------------------------------------------------------------------------------*
+DATOS MUTABLES -->Si modifico uno, estoy modificando al otro tambien. 
+
+def modificar_lista (una_lista: list) -> None:
+    una_lista[3] = "valor modificado" //-->modifique una parte de la lista, como la lista es mutable, se modifica el valor de la posicion 3 unicamente. y no se crea una nueva variable.
+
+
+lista = [5, 9, 8, 7, 6]
+print(lista) /->[5, 9, 8, 7, 6]
+
+modificar_lista(lista)
+print(lista) /->[5, 9, 8,"valor modificado", 7, 6]
+
+
+*---------------------------------------------------------------------------------------------------*
+def presentar_alumno(nombre: str, edad: int, altura: float) -> int:
+-----------------------> Esto es documentar la funcion, es indicar de que se trata y que hace todo esto por si alguien viene a ver que hace todo esto. 
+    #muestra los datos de un presentar_alumno
+    #recibe el nombre, la edad y la altura
+    #retorna un numero
+----------------------->
+
+    print(f"Hola, me llamo {nombre}, tengo {edad} años y mido {altura}")
+
+presentar_alumno("Juan", 22, 1.75)
+
+
+con Docstring con las comillas, comillas, comillas, me da una manera de documentar. 
+A partir de este momento TODAS LAS FUNCIONES TIENEN QUE ESTAR DOCUMENTADAS.
+
+def presentar_alumno(nombre: str, edad: int, altura: float) -> int:
+    
+    """ summary_ presentar que hace la funcion.
+
+    Args:
+        nombre(str): nombre del alumno 
+        edad (int): edad del alumno
+        altura(float): altura del alumno
+    Returns:
+        int: (1: si esta todo bien | 0:si hubo error)
+    """
+
+    print(f"Hola, me llamo {nombre}, tengo {edad} años y mido {altura}")
+    return 1
+
+presentar_alumno("Juan", 22, 1.75)
+
+Las documentaciones tienen que ser sencillas. 
+
+
+---------------------------------------------------------------------------------------------------------------------
+FUNCIONES
+
+Python ofrece la posibilidad de organizar las funciones en modulos y paquetes. 
+A medida que los programas crecen, es necesario separarlos para preservar la legibilidad del codigo. 
+Si tengo un archivo donde tengo las def funciones, las funciones para pedir datos y las que me conectan por ejemplo a una base de datos, etc. seria un caos. Todo separado en funciones pero todas las funciones en el mismo lugar sigue siendo complejo. 
+
+Modulo = en python, es un archivo comun y corriente que tiene funciones, variables, clases y demas.
+    Tienen la extension .py, pueden ser importados, nos permite dividir el codigo de forma manejable y especifica. 
+
+REVER EL VIDEO PARA CREAR EL WORKSPACE.
+
+Todos los modulos estan en un WORKSPACE y tengo que Utilizar en otro programas, yo me puedo crear un paquete para utilizar en distintos modulos.
+ EJ: Modulo con funciones que pida el ingreso de datos, otro modulo que pida la validacion de dichos datos. 
+Nos permite organizar proyectos grandes y reutilizar paquetes. 
+
+__init__.py es el archivo de inicializacion 
+
+una funcion es parte de un modulo y un modulo y parte de un package. .
+
+Bibliotecas estandar : modulos y paquetes que ya se distribuyen con PYTHON. por ejemplo la que usamos siempre es RANDOM.
+
+Instalacion de modulo de terceros. 
+
+control + ñ --> me abe terminal de trabajo
+
+y hago pip install pygame
+
+ahi me lo instala y yo ya lo puedo llamar desde el import. 
+
+__init__.py la forma que tiene el interprete y phyton de que eso es un paquete. 

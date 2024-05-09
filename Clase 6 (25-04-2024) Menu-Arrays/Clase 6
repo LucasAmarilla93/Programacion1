@@ -1,0 +1,9 @@
+Para hacer un menu por terminal tengo que elaborar una estructura repetitiva, asi que deberia representar algo como el menu que tengo en el visual arriba.
+Para hacerlo debo tener un IF-ELIF o por un MATCH
+Puedo arrancar con un bucle infinito, mas facil que un for infinito (Yo no se cuantas veces el programa deberia usar las opciones del menu). While con una bandera.
+
+Creo una bandera
+
+bandera_seguir = True
+
+While bandera_seguir

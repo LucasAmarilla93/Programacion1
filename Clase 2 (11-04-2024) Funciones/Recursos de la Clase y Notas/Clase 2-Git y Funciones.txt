@@ -1,0 +1,183 @@
+°Github
+---> git clone http:// etc. para clonar el repositorio. 
+
+$ git add
+    
+$ git status
+    --saber los branches y el status
+
+$ git commit -m "primer commit"
+    -- "Saco la foto"
+
+$ git push
+    --"La guardo en el album"°
+---------------------------------------------------------------------------------------------------------
+
+For --> para ciclos exactos
+While --> para una q N de vueltas y con un elemento para cortarlo. 
+
+Si es una funcion, lleva parentesis --> type ()
+
+A medida que los programas son mas grandes, es mas dificil porque el codigo lleva mas y mas lineas de codigo tanto para poder mantener y actualizarlo. Por ende todos los lenguajes que llevan a paradigma funcional, permiten dividir el codigo en FUNCIONES. --> bloque de codigo para realizar una tarea especifica que se puede reutilizar, llamarse en cualquier momento y permite organizar el codigo de programas que son demasiados complejos. 
+
+Tenemos que buscar que el codigo este "limpio" --> Facil de leer, mantener, depurar.
+
+Objetivos (Dividir el codigo para que todo se facilite) ("Divide y reinaras") :
+    Minificacion: Descomponer el programa en partes mas pequeñas, asi es mas facil de comprender. 
+    
+    Depuracion: Busco el error en la funcion que corresponde- Ej: un usuario no logra loggearse, voy a buscar la funcion donde se loggean y reviso. El error esta acotado a la funcion que esta fallando. Localizo el bug.
+    
+    Modificacion: Si tengo que actualizar, cambia un requerimiento pero sobre la funcion que corresponde. 
+    
+    Reutilizacion: Si esta bien, esta testeada, no tiene errores, puedo reutilizarla la cantidad de veces que quiera. 
+    
+    Independencia: Una funcion respecto de la otra debe ser lo mas independiente posible. 
+    Acomplamiento: Funcion que apunta a otra funcion, o una funcion que apunta a un dato que esta por afuera de una funcion. 
+    Acomplamiento patologico: Funcion que apunta a var que tiene un algo grado de dependencia, si la var desaparece la funcion que inutilizable y habria que modificarla. Para que una funcion sea independiente, la tengo que parametrizar, tengo que marcar "cosas que entran sin importar donde" y "cosas que salen de la misma sin importar donde". ---> Funcion para una suma donde ingreso dos datos y retorno el resultado por ejemplo. Una cosa es que yo requiera variables o reciba variables y otra cosa es que una funcion este apuntando a una variable que este por afuera. 
+    Cohesion: La funcion debe definir todo lo que necesita adentro Y DEBE FUNCIONAR. 
+
+Las reglas de estilo depende del proposito de la funcion. 
+    --> Tiene que hacer tareas especificas. 
+        -->Ocurre que hay funciones de mas alto nivel y de bajo nivel tambien.A
+
+Ejemplo de una funcion:
+
+
+    keyword  Nombre             Argumento               Argumento opcional
+        \       /                       \              /
+        def calcular_precio_con_iva(valor_sin_iva,iva=21):
+            "Doc"                                           --->Documentacion
+        /->  resultado = valor_sin_iva * (1+(iva*100))
+        /    return resultado.
+        /                   \
+    Variable local           \
+                            Valor de retorno
+
+----->Ver video en la hora 9.24 para completar esta parte. 
+
+keyword: palabra para definir una funcion
+Nombre: snake_case y tiene que estar en infinitivo en algun lugar: calcular, restar, sumar, etc, y todo en minuscula. "calcular_precio_con_iva"
+Argumento: Paramentro que envio
+Argumento opcional: En python figura esto, en otros lenguajes quizas no
+Documentacion: DocString
+Variable local: resultado
+Valor de retorno: que devuelve la funcion
+
+------> Ver video en la hora 9.24 para completar la parte anterior. 
+
+El retorno es el valor que devuelve la funcion hacia afuera.
+    -->Puede estar o no. 
+
+Instancias de una funcion:
+    Definicion de una funcion. 
+    Llamado de una funcion. 
+    Continua en Clase 2 (Funciones).py
+
+Argumento de una funcion se puede clasificar en 2: 
+    El argumento al llamar la funcion. Parametro que le pongo a una funcion cuando la llamo y va a ir cambiando porque le puedo pasar cualquier cosa (PARAMETRO ACTUAL)
+
+    El argumento que va en la implementacion de la funcion y yo defino en esa forma. Puede cambiar su valor que posee pero no cambia ese parametro en si (PARAMETRO FORMAL) 
+
+A una funcion puedo pasarle argumentos de distintas formas:
+    
+    De manera posicional: 
+        
+        def sumar_4(primer_numero, segundo_numero):   --->Paso parametros de manera posicional. 
+        suma = primer_numero + segundo_numero
+        
+        return suma
+
+        primer_numero = input ("Ingrese un numero")
+        primer_numero = int(primer_numero)
+        segundo_numero = input ("Ingrese un numero")
+        segundo_numero = int(segundo_numero)
+
+        resultado = sumar_4(primer_numero, segundo_numero)
+
+        print(resultado)
+        
+
+    Pasarlos por Nombre: Si yo tengo un monton de parametros que pasarle a una funcion, asi que agarro y los paso por nombre, 
+
+        def sumar_4(primer_numero, segundo_numero):   --->Paso parametros de manera posicional. 
+            suma = primer_numero + segundo_numero
+        
+            return suma
+
+        primer_numero_ingresado = input ("Ingrese un numero")
+        primer_numero_ingresado = int(primer_numero_ingresado)
+        segundo_numero_ingresado = input ("Ingrese un numero")
+        segundo_numero_ingresado = int(segundo_numero_ingresado)
+
+        resultado = sumar_4(segundo_numero = segundo_numero_ingresado, primer_numero = primer_numero_ingresado)
+
+        print(resultado)
+        
+    
+    Pasarlos de manera opcional: 
+
+
+         def sumar_4(primer_numero, segundo_numero, tercer_numero = 0):  #tercer numero es un parametro opcional cuando le doy valor. 
+            suma = primer_numero + segundo_numero
+        
+            return suma
+
+
+        resultado = sumar_4 (4,3,9) -->me devuelve 16
+
+        #si quiero llamar a la funcion con dos parametros unicamente la ejecuto asi:
+        
+        otro_resultado = sumar_4 (4,3) --> me devuelve 7 ya que en la tercer posicion toma por resultado el default de 0.
+            #suma 4 + 3 + 0
+
+        #Esto reemplaza algo que se conoce como sobrecarga. --> Alternativa a ello. Se ve en Programacion 2.
+
+        Ver el ejemplo del iva en el PPT. 
+
+LOS PARAMETROS OPCIONALES SON LOS ULTIMOS EN LA LISTA DE PARAMETROS.
+
+#---------------------------------------------------------------------------------------------------------------#
+Puedo definir los parametros que paso con su tipo. Indicar el tipo de dato de cada parametro.
+
+      def sumar_4(primer_numero:int, segundo_numero:int, mensaje:str):  #tercer numero es un parametro opcional cuando le doy valor. 
+            print(mensaje) //---> LO PRINTEA ANTES
+            suma = primer_numero + segundo_numero
+        
+            return suma
+
+
+#-----------------------------------------------------------------------------------------------------------------#
+Funcion recibe dos enteros y un mensaje, y va a devolver un int. Devuelve un entero si o si. Y puedo saber que me convierte.  
+    YA SABE LO QUE TIENE QUE MANDAR A LA FUNCION Y LO QUE LA MISMA LE VA A RETORNAR. ES UNA FIRMA QUE AYUDA AL PROGRAMADOR A SABER QUE RECIBE LA FUNCION Y QUE DEVUELVE LA FUNCION
+    Sirve para documentar la info y saber bien donde va todo. 
+
+      def sumar_4(primer_numero:int, segundo_numero:int, mensaje:str) -> int|None: -->DIGO QUE LA FUNCION RETORNE UN INT O UN NONE SI PASA ALGO QUE NO QUIERO.
+            print(mensaje)
+            suma = primer_numero + segundo_numero
+        
+            return suma
+
+LAS FUNCIONES SIEMPRE TIENEN QUE ESTAR ARRIBA. 
+
+def determinar_paridad (numero:int) -> str:
+    if numero % 2 == 0:
+        mensaje = "Es par"
+    else:
+        mensaje = "Es impar"
+    return mensaje
+
+
+def determinar_paridad2 (numero:int) -> bool:
+    if numero % 2 == 0:
+        es_par = "True"
+    else:
+        es_par = "False"
+
+    return es_par
+
+
+bandera_par = determinar_paridad2(4)
+if bandera_par = True:
+    print("Es par")
+else:
+    print("Es impar")

@@ -1,0 +1,11 @@
+PEP8 tiene enmarcadas las reglas de estilo. 
+Primer regla es el indentado: por cuestion funcional.
+Se recomienda una cantidad de caracteres por linea por el tamaño de la resolucion de la pantalla. 79 caracteres.
+Si se sobrepasa, desde el punto de vista del diseño esta mal programado. 
+Ir dejando lineas de acuerdo a lo que voy programando para dividir y ordenar bloques logicos. 
+Funciones en snake_case.
+
+constante: se declara como una variable y la defino toda en mayus.
+TAMAÑO_PANTALLA = (500, 500) 
+
+En python la constante es un concepto.

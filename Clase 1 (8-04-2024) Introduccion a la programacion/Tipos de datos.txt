@@ -1,0 +1,91 @@
+Variable : es un contenedor donde guardamos datos, o un espacio de memoria los cuales estan asociados a una direccion de memoria. Es un conjunto de transistores que guardan distintos estados de energia. (transistores y capacitores)
+    Una var esta asociada a una direccion de memoria que esta dentro de la RAM.
+
+Cuando creo una var, el sistema operativo agrupa un conjunto de celdas con binarios dentro y guarda un dato.(ej: el nombre de una persona) y tiene adentro las respectivas direcciones de memoria. Cada celda que se junto, tiene una direccion de memoria y yo tomo solo la primera del conjunto cuando declaro una variable para llamarla.
+
+En python TODAS LAS VAR SON OBJETOS.
+Python es un lenguaje de programacion orientado a objetos. TODO LO QUE HAGA EN PYTHON ES UN OBJETO. 
+Todas las var son referencias. 
+Cada objeto tiene:
+   °Un identificador unico (numero o id) : permite identificar ese objeto dentro de un conjunto de objetos. 
+   °Tipo de dato: entero, decimal, cadena de caracteres, un booleano, un string. 
+   °Un valor: si a la var numero 5 por ejemplo. 
+
+Python no es un lenguaje declarativo, porque CREA LA VAR EN EL MOMENTO QUE LA USO.
+
+numero = 5 --> python
+
+C y JS son lenguajes DECLARATIVOS.
+
+var numero;
+numero = 5  --> JS
+
+int numero;
+numero = 5 ---> C
+
+----------------------------------------------------------------------------------
+
+numero = 5
+nombre = "Juan"
+altura = 1.78
+bandera = True
+
+print (type(numero)) ---> Tyoe para ver el tipo de dato. 
+
+<class "int"> --->tipo de dato
+<class "str"> 
+<class "float"> 
+<class "bool"> 
+
+Ver el id. Abstraccion de direccion de memoria (Seria como el numero de documento)
+    -->De esta asignacion de posicion de memoria se encarga el S.O. a traves de una reservacion.
+
+VER ID CON FUNCION ID.
+
+numero = 5
+nombre = "Juan"
+altura = 1.78
+bandera = True
+
+print(id(numero))
+print(id(nombre))
+print(id(altura))
+print(id(bandera))
+
+-----------------------------------------------------------------------------------------
+°input funciona como el prompt. Para ingresar todo por consola. 
+
+numero = input("Ingrese un numero")
+
+print(type(numero))
+
+--->Me va a devolver que es un str. 
+
+numero = int(numero)
+
+----> ahora si me devuelve el int. 
+
+numero = input ("Ingrese un numero")
+print(id(numero))
+numero = int(numero)
+print(id(numero))
+
+---> me va a devolver 2 id distintos porque las variables no son las mismas. 
+La mutabilidad de las variables. 
+
+Python --> 2 tipos de variables: las mutables y la inmutables.
+Todas las que declaramos recien son inmutables: numero, bandera, altura, etc.
+Inmutables porque no pueden cambiar su valor dentro de la memoria. 
+    Esto significa que se reservan NUEVOS ESPACIOS DE MEMORIA pero los anteriores que se utilizaron vuelven a quedar disponibles. (se destruye la variable anterior y se crea una nueva y por eso cambia el id.)
+    No cambia porque se crea una variable NUEVA. 
+
+Variables mutables: pueden cambiar y se pueden modificar sin que cambie el id, no se crean nuevas variables. 
+    lista = [5, 9, 7, 8]
+
+    print(id(lista))
+
+    lista[2] = 44
+
+    print(id(lista))
+
+Var mutables: List, Dic, Sets.

@@ -1,0 +1,12 @@
+Python es un lenguaje lanzado en el 1991, se hizo popular en los ultimos 5 o 6 años.
+Guido van Rossum lo desarrollo como una necesidad ya que los tiempos de respuesta de C eran mas lentos. 
+
+Python es un lenguaje de propositos generales:
+    Software multiplataforma: da igual el sistema operativo instalado. (no tenemos el problema del compilador porque su interprete es universal)
+    Videojuegos: se puede utilizar para programar Videojuegos con pygames
+    Aplicaciones web: backend
+    Big Data: Data analitycs, Panda, Jupiter -->Ciencia de datos
+    Inteligencia Artificial: se puede realizar un chatgpt. 
+
+Su sintaxis es sencilla, se puede aprender. Trabajamos con Python 3.
+Se basa en sangrias. 

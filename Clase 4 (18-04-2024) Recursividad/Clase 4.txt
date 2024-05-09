@@ -1,0 +1,4 @@
+Recursividad: problemas que se define en si mismo y si la solucion incluye a esa misma funcion para resolver el problema. 
+Eso se denomina Recursividad. El problema siempre se tiene que resolver sobre un conjunto de entrada de datos mas chicos. En algun momento esa Recursividad debe acabar, caso contrario, se puede llegar a generar un bucle infinito. 
+
+La Recursividad aplicada a la programacion permite resolver tareas donde estas puedan ser divididas en tarea mas pequeñas pero cuya funcionalidad es la misma. 
