@@ -105,7 +105,7 @@ Ingrese su opcion: """)
     
     match opcion:
         case "a":
-            print(legajo_aleatorio) #BORRAR ESTO LUEGO
+            #print(legajo_aleatorio) -> Para ver los legajos aleatorios ya creados.
             ingreso_legajo = get_int("Ingrese el numero de legajo del chofer: ")
             validacion_legajo = validar_reintentos_chofer(ingreso_legajo, legajo_aleatorio)
             bandera_legajo_ingresado = True
@@ -114,21 +114,14 @@ Ingrese su opcion: """)
         match opcion:
             case "b":
                 matriz_cargada = cargar_matriz(matriz)
-                #Tiene que ingresar una linea, si la linea no esta dentro de la matriz, no me debe dejar ingresar un coche. 
-
-                #Luego tiene que ingresar un coche. 
-                
-                #Se validan las dos con la misma. Hay que parametrizar.
-                
             case "c":
-                racaudacion = mostrar_recaudacion_cada_choche_linea(matriz)
+                recaudacion = mostrar_recaudacion_cada_choche_linea(matriz)
             case "d":
-                #d.Calcular y mostrar recaudación por línea.
-                pass
+                recaudacion_linea = mostrar_recaudacion_linea(matriz)
             case "e":
-                pass
+                recaudacion_coche = mostrar_recaudacion_coche(matriz)
             case "f":
-                pass
+                recaudacion_total = mostrar_recaudacion_total(matriz)
             case "g":
                 salida = input("¿Desea salir del programa? y/n: ")
                 if salida == "y":
