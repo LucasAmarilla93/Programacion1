@@ -1,0 +1,4 @@
+Strings
+
+Podemos trabajarlo como un conjunto de elementos individuales que se concatenan. Puedo indexarlos como si fuese un vector.
+Se indexan en 0. 

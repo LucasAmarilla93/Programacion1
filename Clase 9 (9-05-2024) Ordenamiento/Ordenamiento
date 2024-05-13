@@ -1,0 +1,94 @@
+Conjunto de instrucciones que buscan organizar elementos en un orden particular. (criterio de ordenamiento)
+
+Clasificacion:
+    Cantidad de intercambios.
+    Comparaciones que hace.
+    Espacio que utiliza.
+    Si utiliza recursividad o no
+
+Bubble Sort
+
+       *       °                                                  *       °
+---    4       1       3       5       2                       / num  >  num        * es como un pivot.
+       0       1       2       3       4                             swap           ° se mueve. 
+
+        Se swapeean y luego el ° va interactuando con los demas numeros.
+
+        *               °
+ ---    1       4       3       5       2                       
+        0       1       2       3       4                           
+
+        *                       °
+ ---    1       4       3       5       2                       
+        0       1       2       3       4                           
+
+        *                               °
+ ---    1       4       3       5       2                       
+        0       1       2       3       4      
+
+        el ° llego al final y me aseguro que el | esta ordenado (es el mas chiquito o mas grande)                     
+
+        *                               °
+        |                               
+ ---    1       4       3       5       2           El 1 ya esta ordenado            
+        0       1       2       3       4                           
+
+##############Empieza de nuevo###################
+
+                *       °
+        |                               
+ ---    1       4       3       5       2                       
+        0       1       2       3       4  
+
+
+                *               °
+        |                               
+ ---    1       3       4       5       2                       
+        0       1       2       3       4  
+
+                *                       °
+        |                               
+ ---    1       3       4       5       2                       
+        0       1       2       3       4  
+          
+                *                       °
+        |       |                            
+ ---    1       2       4       5       3           El 2 ya esta ordenado
+        0       1       2       3       4  
+
+############Empieza de nuevo #######################
+
+                        *       °
+        |       |                            
+ ---    1       2       4       5       3                       
+        0       1       2       3       4  
+
+                        *               °
+        |       |                            
+ ---    1       2       4       5       3                       
+        0       1       2       3       4  
+
+                        *               °
+        |       |       |                     
+ ---    1       2       3       5       4           El 3 ya esta ordenado.                       
+        0       1       2       3       4  
+
+
+############Empieza de nuevo ###########################
+
+                                *       °
+        |       |       |                     
+ ---    1       2       3       5       4           pregunta de nuevo.                   
+        0       1       2       3       4  
+
+
+                                *       °
+        |       |       |       |              
+ ---    1       2       3       4       5             
+        0       1       2       3       4  
+
+    Cuando el * llego a la ultima posicion, ahi dejo de recorrer por descarte en la mecanica. El ° me va a seguir iterando y me va a dar una expecion fuera de rango. La logica es llegar hasta el anteultimo elemento. 
+
+    El pivote * tiene que quedarse hasta el anteultimo elemento para no desbordar el array. 
+            
+    Queda todo ordenado.
