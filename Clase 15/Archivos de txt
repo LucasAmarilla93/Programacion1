@@ -1,0 +1,57 @@
+VER VIDEO. 
+
+
+Todos los archivos que guardemos, se guardan en combinaciones de 1 y 0 (binario). Cambia en cuanto a la interpretacion de los archivos.
+La combinacion binaria no es la misma para guardar un string "1" que 1 como int. 
+1: int 31 bits 0 y uno solo en 1           ---> binario
+"1": str 8 bits. 49/2     ---> 110001      ---> txt.
+                 1   24/2
+                     0  12/2    
+                        0  6/2
+                           0 3/2
+                           1  1 
+
+
+Archivos de txt contienen caracteres legibles, es posible leer el contenido. Hay que pensarlo en primera instancia como texto plano y despues darle cierta estructura. : txt, csv, html.
+
+Archivos binario: no se puede interpretar en forma de texto: una imagen, un sonido o un archivo comprimido. Ej: JPG, MP4, GIF.
+
+Archivos de base de datos: sql, sqlserver, sqllite.
+
+
+############################ COMPONENTES ###########################################
+Nombre del archivo: identificacion del archivo en el sistema de almacenamiento.
+
+Extension del archivo: sufijo que indica el tipo del archivo y el formato de los datos que contiene.
+
+Metadados del archivo: informacion adicional sobre al archivo.
+
+Contenido del archivo: informacion almacenada del archivo. 
+
+
+############################## Operaciones ################################################
+
+Apertura: acceder a un archivo para leer, escribir o modificar su contenido.
+
+Lectura: extrae datos de un archivo.
+Escritura: guardar datos en un archivo, ya sea creando contenido nuevo o modificando el existente.
+
+Cierre: terminar el acceso a un archivo y liberar cualquier recurso asociado.
+   Hay que cerrarlo sino el archivo se puede CORROMPER -> se pierden datos, o si yo quiero hacer algo con ese archivo y no lo puedo mover de carpeta o cambiarle el nombre porque ya lo tengo abierto. Hay que prever esto. 
+
+
+################################################ Abrir archivo #############################################
+
+OPEN = necesito el nombre del archivo y donde esta ubicado, y el modo de apertura. 
+
+archivo = open(nombre_archivo, modo)
+
+archivo objeto file, el cual sera utilizado para llamar a otros metodos asociados.
+
+
+w            si el archivo no existe lo crea, y si existe lo sobreescribe. 
+
+
+Abro el archivo, lo uso y lo cierro.
+
+archivo.close() -> da por terminado el flujo de datos del archivo.
